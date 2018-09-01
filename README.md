@@ -1,22 +1,18 @@
 # Laravel Nova Blog
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codebase/nova-blog.svg?style=flat-square)](https://packagist.org/packages/codebase/nova-blog)
-![CircleCI branch](https://img.shields.io/circleci/project/github/CodeStacked/nova-blog/master.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/Stack/nova-blog/master.svg?style=flat-square)](https://travis-ci.org/Stack/nova-blog)
-[![Quality Score](https://img.shields.io/scrutinizer/g/Stack/nova-blog.svg?style=flat-square)](https://scrutinizer-ci.com/g/Stack/nova-blog)
 [![Total Downloads](https://img.shields.io/packagist/dt/codebase/nova-blog.svg?style=flat-square)](https://packagist.org/packages/codebase/nova-blog)
 
 
-This is where your description should go. Try and limit it to a paragraph or two.
-
-Add a screenshot of the tool here.
+Nova Blog Tool Solution with Posts, Categories, Comments, Tags and Images.
+Modular Implementation, installs migrations, rolls back, resets and provides configuration.
 
 ## Installation
 
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
-composer require stack/nova-blog
+composer require codebase/nova-blog
 ```
 
 Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
@@ -30,7 +26,7 @@ public function tools()
 {
     return [
         // ...
-        new \Stack\Nova\BlogTool(),
+        new \Stack\Nova\Tools\BlogTool(),
     ];
 }
 ```

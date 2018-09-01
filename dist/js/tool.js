@@ -299,7 +299,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         installationCheck: function installationCheck() {
             var _this = this;
 
-            Nova.request().get("/nova-vendor/nova-blog/check-migrations").then(function (response) {
+            Nova.request().get("/stack/nova-blog/check-migrations").then(function (response) {
                 return _this.installed = response.data.installed;
             }).catch(function () {
                 return _this.error = true;
@@ -308,7 +308,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         install: function install() {
             var _this2 = this;
 
-            Nova.request().get("/nova-vendor/nova-blog/migrate-tables").then(function (response) {
+            Nova.request().get("/stack/nova-blog/migrate-tables").then(function (response) {
                 return _this2.messages = response.data.messages;
             }).then(function () {
                 return _this2.reloadPage();
@@ -323,7 +323,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.resetMessages();
 
-            Nova.request().get("/nova-vendor/nova-blog/reset-content").then(function (response) {
+            Nova.request().get("/stack/nova-blog/reset-content").then(function (response) {
                 return _this3.messages = response.data.messages;
             }).then(function () {
                 setTimeout(function () {
@@ -338,7 +338,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.resetMessages();
 
-            Nova.request().get("/nova-vendor/nova-blog/uninstall").then(function (response) {
+            Nova.request().get("/stack/nova-blog/uninstall").then(function (response) {
                 return _this4.messages = response.data.messages;
             }).then(function () {
                 return _this4.reloadPage();

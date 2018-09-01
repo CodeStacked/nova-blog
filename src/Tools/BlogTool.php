@@ -1,6 +1,6 @@
 <?php
 
-namespace Stack\Nova;
+namespace Stack\Nova\Tools;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;

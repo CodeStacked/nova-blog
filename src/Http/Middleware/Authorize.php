@@ -2,7 +2,7 @@
 
 namespace Stack\Nova\Http\Middleware;
 
-use Stack\Nova\BlogTool;
+use Stack\Nova\Tools\BlogTool;
 
 class Authorize
 {

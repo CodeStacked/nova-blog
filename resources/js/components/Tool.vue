@@ -50,13 +50,13 @@ export default {
 
     methods: {
         installationCheck () {
-            Nova.request().get("/nova-vendor/nova-blog/check-migrations")
+            Nova.request().get("/stack/nova-blog/check-migrations")
                 .then(response => this.installed = response.data.installed)
                 .catch(() => this.error = true)
         },
 
         install () {
-            Nova.request().get("/nova-vendor/nova-blog/migrate-tables")
+            Nova.request().get("/stack/nova-blog/migrate-tables")
                 .then(response => this.messages = response.data.messages)
                 .then(() => this.reloadPage())
                 .then(() => this.installationCheck())
@@ -66,7 +66,7 @@ export default {
         resetContent () {
             this.resetMessages()
 
-            Nova.request().get("/nova-vendor/nova-blog/reset-content")
+            Nova.request().get("/stack/nova-blog/reset-content")
                 .then(response => this.messages = response.data.messages)
                 .then(() => {
                      setTimeout(() => {
@@ -79,7 +79,7 @@ export default {
         deleteTables () {
             this.resetMessages()
 
-            Nova.request().get("/nova-vendor/nova-blog/uninstall")
+            Nova.request().get("/stack/nova-blog/uninstall")
                 .then(response => this.messages = response.data.messages)
                 .then(() => this.reloadPage())
                 .catch(error => this.error = true)

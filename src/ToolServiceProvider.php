@@ -4,6 +4,8 @@ namespace Stack\Nova;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 use Stack\Nova\Models\Image;
 use Stack\Nova\Bootstrap\Blog;
 use Stack\Nova\Observers\ImageObserver;
@@ -31,6 +33,12 @@ class ToolServiceProvider extends ServiceProvider
         $this->publishes([
             $this->configPath() => config_path('nova-blog.php'),
         ], 'nova-blog-config');
+
+        // Recent Posts
+        Nova::serving(function (ServingNova $event) {
+            Nova::script('recent-posts', __DIR__.'/../dist/js/card.js');
+            Nova::style('recent-posts', __DIR__.'/../dist/css/card.css');
+        });
     }
 
     /**
@@ -45,7 +53,7 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/nova-blog')
+                ->prefix('stack/nova-blog')
                 ->group(__DIR__.'/../routes/api.php');
     }
 
