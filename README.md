@@ -1,8 +1,9 @@
 # Laravel Nova Blog
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebase/nova-blog.svg?style=flat-square)](https://packagist.org/packages/codebase/nova-blog)
-[![Total Downloads](https://img.shields.io/packagist/dt/codebase/nova-blog.svg?style=flat-square)](https://packagist.org/packages/codebase/nova-blog)
-
+[![Latest Stable Version](https://poser.pugx.org/codebase/nova-blog/v/stable?format=flat)](https://packagist.org/packages/codebase/nova-blog)
+[![Total Downloads](https://poser.pugx.org/codebase/nova-blog/downloads?format=flat)](https://packagist.org/packages/codebase/nova-blog)
+[![Latest Unstable Version](https://poser.pugx.org/codebase/nova-blog/v/unstable?format=flat)](https://packagist.org/packages/codebase/nova-blog)
+[![License](https://poser.pugx.org/codebase/nova-blog/license?format=flat)](https://packagist.org/packages/codebase/nova-blog)
 
 Nova Blog Tool Solution with Posts, Categories, Comments, Tags and Images. A complete solution with a modular Implementation, installs migrations, rolls back, resets and provides configuration.
 
