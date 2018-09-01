@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Stack\Nova\Bootstrap\Blog;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('endpoint', \Stack\NovaTool\Http\Controllers\ToolController::class . '@index');
+Route::get('/check-migrations', function (Request $request) {
+    return response()->json([
+        'installed' => Blog::isInstalled(),
+    ], 200);
+});
+
+Route::get('/migrate-tables', 'Stack\Nova\Http\Controllers\MigrationController@execute');
+Route::get('/reset-content', 'Stack\Nova\Http\Controllers\ResetController@execute');
+Route::get('/uninstall', 'Stack\Nova\Http\Controllers\UninstallController@execute');

@@ -1,9 +1,9 @@
 <?php
 
-namespace Stack\NovaTool\Tests;
+namespace Stack\Nova\Tests;
 
-use Stack\NovaTool\Http\Controllers\ToolController;
-use Stack\NovaTool\NovaTool;
+use Stack\Nova\Http\Controllers\ToolController;
+use Stack\Nova\BlogTool;
 use Symfony\Component\HttpFoundation\Response;
 
 class ToolControllerTest extends TestCase
@@ -12,7 +12,7 @@ class ToolControllerTest extends TestCase
     public function it_can_can_return_a_response()
     {
         $this
-            ->get('nova-vendor/stack/nova-tool/endpoint')
+            ->get('nova-vendor/CodeStacked/nova-blog/endpoint')
             ->assertSuccessful();
     }
 }

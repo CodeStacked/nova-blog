@@ -1,12 +1,13 @@
 <?php
 
-namespace Stack\NovaTool;
+namespace Stack\Nova;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Stack\NovaTool\Http\Middleware\Authorize;
+use Stack\Nova\Models\Image;
+use Stack\Nova\Bootstrap\Blog;
+use Stack\Nova\Observers\ImageObserver;
+use Stack\Nova\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -17,15 +18,19 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-tool');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-blog');
 
         $this->app->booted(function () {
             $this->routes();
+
+            Blog::injectToolResources();
         });
 
-        Nova::serving(function (ServingNova $event) {
-            //
-        });
+        Image::observe(ImageObserver::class);
+
+        $this->publishes([
+            $this->configPath() => config_path('nova-blog.php'),
+        ], 'nova-blog-config');
     }
 
     /**
@@ -40,7 +45,7 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/stack/nova-tool')
+                ->prefix('nova-vendor/nova-blog')
                 ->group(__DIR__.'/../routes/api.php');
     }
 
@@ -51,6 +56,14 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom($this->configPath(), 'nova-blog');
+    }
+
+    /**
+     * @return string
+     */
+    protected function configPath()
+    {
+        return __DIR__ . '/../config/nova-blog.php';
     }
 }

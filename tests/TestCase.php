@@ -1,10 +1,10 @@
 <?php
 
-namespace Stack\NovaTool\Tests;
+namespace Stack\Nova\Tests;
 
 use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Stack\NovaTool\ToolServiceProvider;
+use Stack\Nova\ToolServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

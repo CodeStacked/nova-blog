@@ -1,6 +1,6 @@
 {
-    "name": "codebase/nova-tool",
-    "description": "Laravel Nova Tool",
+    "name": "codebase/nova-blog",
+    "description": "Laravel Nova Blog Solution",
     "keywords": [
         "laravel",
         "nova"
@@ -11,7 +11,7 @@
             "url": "../laravel-nova"
         }
     ],
-    "homepage": "https://github.com/CodeStacked/nova-tool",
+    "homepage": "https://github.com/CodeStacked/nova-blog",
     "license": "MIT",
     "authors": [
         {
@@ -22,7 +22,9 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "laravel/nova": "*"
+        "laravel/nova": "*",
+        "intervention/image": "^2.4.0",
+        "jameslkingsley/nova-media-library-field": "^1.0"
     },
     "require-dev": {
         "orchestra/testbench": "^3.6",
@@ -30,18 +32,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Stack\\NovaTool\\": "src/"
+            "Stack\\Nova\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Stack\\NovaTool\\Tests\\": "tests"
+            "Stack\\Nova\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Stack\\NovaTool\\ToolServiceProvider"
+                "Stack\\Nova\\ToolServiceProvider"
             ]
         }
     },

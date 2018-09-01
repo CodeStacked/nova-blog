@@ -1,18 +1,20 @@
 <?php
 
-namespace Stack\NovaTool\Http\Middleware;
+namespace Stack\Nova\Http\Middleware;
 
-use Closure;
-use Illuminate\Http\Request;
-use Stack\NovaTool\Tool;
-use Symfony\Component\HttpFoundation\Response;
+use Stack\Nova\BlogTool;
 
 class Authorize
 {
-    public function handle(Request $request, Closure $next): Response
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return \Illuminate\Http\Response
+     */
+    public function handle($request, $next)
     {
-        return app(Tool::class)->authorize($request)
-            ? $next($request)
-            : abort(403);
+        return resolve(BlogTool::class)->authorize($request) ? $next($request) : abort(403);
     }
 }
