@@ -4,8 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/codebase/nova-blog.svg?style=flat-square)](https://packagist.org/packages/codebase/nova-blog)
 
 
-Nova Blog Tool Solution with Posts, Categories, Comments, Tags and Images.
-Modular Implementation, installs migrations, rolls back, resets and provides configuration.
+Nova Blog Tool Solution with Posts, Categories, Comments, Tags and Images. A complete solution with a modular Implementation, installs migrations, rolls back, resets and provides configuration.
 
 ## Installation
 
