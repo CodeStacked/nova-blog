@@ -1,0 +1,53 @@
+{
+    "name": "stack/nova-tool",
+    "description": "Laravel Nova Tool",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../laravel-nova"
+        }
+    ],
+    "homepage": "https://github.com/CodeStacked/nova-tool",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Carlo Rademan",
+            "email": "io.codestack@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "laravel/nova": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6",
+        "phpunit/phpunit": "7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stack\\NovaTool\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Stack\\NovaTool\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Stack\\NovaTool\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
