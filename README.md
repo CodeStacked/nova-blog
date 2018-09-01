@@ -30,11 +30,11 @@ Now you're ready to develop your package inside a Nova app.
 
 # Laravel Nova Tool
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebase/nova-tool.svg?style=flat-square)](https://packagist.org/packages/Stack/nova-tool)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebase/nova-tool.svg?style=flat-square)](https://packagist.org/packages/codebase/nova-tool)
 ![CircleCI branch](https://img.shields.io/circleci/project/github/CodeStacked/nova-tool/master.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/Stack/nova-tool/master.svg?style=flat-square)](https://travis-ci.org/Stack/nova-tool)
 [![Quality Score](https://img.shields.io/scrutinizer/g/Stack/nova-tool.svg?style=flat-square)](https://scrutinizer-ci.com/g/Stack/nova-tool)
-[![Total Downloads](https://img.shields.io/packagist/dt/Stack/nova-tool.svg?style=flat-square)](https://packagist.org/packages/Stack/nova-tool)
+[![Total Downloads](https://img.shields.io/packagist/dt/codebase/nova-tool.svg?style=flat-square)](https://packagist.org/packages/codebase/nova-tool)
 
 
 This is where your description should go. Try and limit it to a paragraph or two.
